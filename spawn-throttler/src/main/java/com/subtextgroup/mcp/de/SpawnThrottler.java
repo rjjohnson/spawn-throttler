@@ -24,10 +24,8 @@ public class SpawnThrottler extends JavaPlugin {
     @Override
     public void onEnable() {
         config = getConfig();
-        config.addDefault("max-spawns-per-interval", DEFAULT_MAX_SPAWNS_PER_INTERVAL);
-        config.addDefault("interval-milliseconds", DEFAULT_INTERVAL_MS);
-        this.maxSpawnsPerInterval = config.getInt("max-spawns-per-interval");
-        this.intervalMs = config.getLong("interval-milliseconds");
+        this.maxSpawnsPerInterval = config.getInt("max-spawns-per-interval", DEFAULT_MAX_SPAWNS_PER_INTERVAL);
+        this.intervalMs = config.getLong("interval-milliseconds", DEFAULT_INTERVAL_MS);
         saveConfig();
         this.listener = new SpawnEggListener(this, maxSpawnsPerInterval, intervalMs);
         getServer().getPluginManager().registerEvents(listener, this);
