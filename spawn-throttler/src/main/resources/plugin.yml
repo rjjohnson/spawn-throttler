@@ -1,0 +1,5 @@
+main: com.subtextgroup.mcp.de.SpawnThrottler
+name: SpawnThrottler
+version: 1.0
+author: ryanjohnson
+description: Throttle mob spawning
